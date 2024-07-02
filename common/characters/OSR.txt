@@ -1,0 +1,69 @@
+characters = {
+	OSR_igor_kasatonov = {
+		name = OSR_igor_kasatonov
+		portraits={
+			civilian={
+				large = "GFX_OSR_igor_kasatonov"
+			}
+			army = {
+				large = "GFX_OSR_igor_kasatonov"
+				small = "GFX_advisor_OSR_igor_kasatonov"
+			}
+		}
+		country_leader={
+			ideology = stratocracy
+		}
+		navy_leader = {
+			traits = { ironside seawolf }
+			skill = 8
+			attack_skill = 5
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 4
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = OSR_igor_kasatonov
+			can_be_fired = no
+			ledger = navy
+			traits = { 
+				navy_capital_ship_3
+			}
+		}
+	}
+	OSR_mahmut_gareev = {
+		name = OSR_mahmut_gareev
+		portraits={
+			civilian={
+				large = "GFX_OSR_mahmut_gareev"
+			}
+			army = {
+				large = "GFX_OSR_mahmut_gareev"
+				small = "GFX_advisor_OSR_mahmut_gareev"
+			}
+		}
+		country_leader={
+			ideology = stratocracy
+		}
+		corps_commander = {
+			skill = 6
+			traits = { infantry_leader infantry_expert infantry_officer defensive_doctrine guerilla_fighter unyielding_defender camouflage_expert }
+			attack_skill = 4
+			defense_skill = 8
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = OSR_mahmut_gareev
+			can_be_fired = no
+			ledger = army
+			traits = { army_chief_defensive_3 }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = OSR_mahmut_gareev_2
+			traits = { superior_firepower_expert }
+		}
+	}
+}

@@ -1,0 +1,108 @@
+characters = {
+	DON_petr_molodidov = {
+		name = DON_petr_molodidov
+		portraits={
+			civilian={
+				large = "GFX_DON_molodidov"
+			}
+			army={
+				large="GFX_DON_molodidov"
+				small="/gfx/interface/ideas/idea_LEB_generic_land_3.dds"
+			}
+		}
+		country_leader={
+			ideology = anarcho_monarchism
+			traits = {
+				
+			}
+		}
+		field_marshal = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 1
+		}
+	}
+	DON_ivan_polozkov = {
+		name = DON_ivan_polozkov
+		portraits = {
+			civilian = {
+				large = "GFX_DON_ivan_polozkov"
+			}
+		}
+		country_leader = {
+			ideology = pragmatic_socialism
+			traits = {
+				
+			}
+		}
+	}
+	DON_august_kruse = {
+		name = DON_august_kruse
+		portraits = {
+			civilian = {
+				large = "GFX_DON_august_kruse"
+			}
+		}
+		country_leader = {
+			ideology = social_liberalism
+			traits = {
+				
+			}
+		}
+	}
+	DON_igor_strelkov = {
+		name = DON_igor_strelkov
+		portraits = {
+			army={
+				small="GFX_advisor_DON_igor_strelkov"
+				large="GFX_DON_igor_strelkov"
+			}	
+			civilian = {
+				small="GFX_advisor_DON_igor_strelkov"
+				large = "GFX_DON_igor_strelkov"
+			}
+		}
+		country_leader = {
+			ideology = nationalist_monarchism
+			traits = {
+				
+			}
+		}
+		corps_commander = {
+			skill = 1
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	DON_vladislav_kislyakov = {
+		name = DON_vladislav_kislyakov
+		portraits = {
+			army={
+				small="GFX_advisor_DON_vladislav_kislyakov"
+				large="GFX_DON_vladislav_kislyakov"
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	DON_dmitriy_kochinskiy = {
+		name = DON_dmitriy_kochinskiy
+		portraits = {
+			army={
+				large="GFX_DON_dmitriy_kochinskiy"
+			}
+			civilian = {
+				large = "GFX_DON_dmitriy_kochinskiy"
+			}
+		}
+	}
+}

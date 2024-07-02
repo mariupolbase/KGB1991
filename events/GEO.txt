@@ -1,0 +1,1766 @@
+add_namespace = geo
+add_namespace = geo_hidden
+
+#Just a little more
+country_event = {
+    id = geo.1
+    title = geo.1.t
+    desc = geo.1.d
+	picture = GFX_report_event_soldiers_marching
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #Offer the Russians a peace treaty. They are too weak
+    option = {
+        name = geo.1.a
+		add_war_support = -0.025
+        add_political_power = 10
+        SOV = {
+            country_event = {
+                id = geo.2
+                days = 1
+                random_days = 2
+                random_hours = 8
+            }
+        }
+    }
+    #Just a little more, one last offensive!
+    option = {
+        name = geo.1.b
+		add_war_support = 0.05
+        add_political_power = 25
+        unlock_national_focus = GEO_begin_the_grand_offensive
+        add_timed_idea = {
+            idea = GEO_grand_offensive
+            days = 45
+        }
+        set_country_flag = GEO_ai_grand_offensive
+        every_army_leader = {
+            add_attack = 1
+        }
+        every_owned_state = {
+            limit = {
+                is_controlled_by = SOV
+            }
+            add_resistance = 7.5
+            add_compliance = -5
+        }
+        if = {
+            limit = {
+                SOV = {
+                    controls_state = 664
+                }
+            }
+            664 = {
+                add_resistance = 10
+                add_compliance = -7.5
+            }
+        }
+        if = {
+            limit = {
+                826 = {
+                    is_owned_by = ABK
+                    is_controlled_by = SOV
+                }
+            }
+            826 = {
+                add_resistance = 10
+                add_compliance = -7.5
+            }
+        }
+        if = {
+            limit = {
+                210 = {
+                    is_owned_by = SOS
+                    is_controlled_by = SOV
+                }
+            }
+            210 = {
+                add_resistance = 10
+                add_compliance = -7.5
+            }
+        }
+    }
+}
+
+#Georgia offers our capitulation! (SOV)
+country_event = {
+    id = geo.2
+    title = geo.2.t
+    desc = geo.2.d
+	picture = GFX_report_event_generic_sign_treaty1
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #No treaties with separatists! The goals of the SMO will be achieved!
+    option = {
+        name = geo.2.a
+        ai_chance = {
+			base = 10
+        } 
+        custom_effect_tooltip = SOV_possible_failure_of_the_SMO_in_georgia
+        if = {
+            limit = {
+                has_completed_focus = SOV_georgian_meat_grinder
+                has_completed_focus = SOV_call_to_yazov
+            }
+            complete_national_focus = SOV_continue_SMO
+        }
+        add_political_power = -30
+        add_stability = -0.035
+		add_war_support = 0.01
+        GEO = {
+            country_event = {
+                id = geo.3
+                days = 0
+                hours = 7
+                random_hours = 16
+            }
+            custom_effect_tooltip = EFFECTS_FOR_COUNTRY
+            effect_tooltip = {
+                unlock_national_focus = GEO_begin_the_grand_offensive
+                add_timed_idea = {
+                    idea = GEO_grand_offensive
+                    days = 50
+                }
+                set_country_flag = GEO_ai_grand_offensive
+                every_army_leader = {
+                    add_attack = 1
+                }
+                every_owned_state = {
+                    limit = {
+                        is_controlled_by = SOV
+                    }
+                    add_resistance = 10
+                    add_compliance = -7.5
+                }
+                if = {
+                    limit = {
+                        SOV = {
+                            controls_state = 664
+                        }
+                    }
+                    664 = {
+                        add_resistance = 12.5
+                        add_compliance = -10
+                    }
+                }
+                if = {
+                    limit = {
+                        826 = {
+                            is_owned_by = ABK
+                            is_controlled_by = SOV
+                        }
+                    }
+                    826 = {
+                        add_resistance = 12.5
+                        add_compliance = -10
+                    }
+                }
+                if = {
+                    limit = {
+                        210 = {
+                            is_owned_by = SOS
+                            is_controlled_by = SOV
+                        }
+                    }
+                    210 = {
+                        add_resistance = 12.5
+                        add_compliance = -10
+                    }
+                }
+            }
+        }
+    }
+    #The situation is too critical, we have no choice...
+    option = {
+        name = geo.2.b
+        ai_chance = {
+			base = 1
+            modifier = {
+				add = 1
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 20
+				}
+			}
+			modifier = {
+				add = 1
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 25
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 30
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 35
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 40
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 55
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 60
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 65
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 70
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 75
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 80
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 85
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 90
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 95
+				}
+			}
+			modifier = {
+				add = 2
+				casualties_inflicted_by = {
+					opponent = GEO
+					thousands > 100
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = SOV_call_to_yazov
+				}
+			}
+		}
+        custom_effect_tooltip = SOV_failure_of_the_SMO_in_georgia
+        if = {
+            limit = {
+                has_completed_focus = SOV_continue_SMO
+            }
+            uncomplete_national_focus = {
+                focus = SOV_continue_SMO
+            }
+        }
+        if = {
+            limit = {
+                has_completed_focus = SOV_georgian_meat_grinder
+            }
+            complete_national_focus = SOV_withdraw_troops
+        }
+        add_political_power = -100
+        add_stability = -0.075
+		add_war_support = -0.05
+        add_popularity = {
+			ideology = authoritarianism
+			popularity = -0.025
+		}
+        clr_country_flag = first_georgian_war
+        white_peace = GEO
+        GEO = {
+            country_event = {
+                id = geo.4
+                days = 1
+                hours = 2
+                random_hours = 7
+            }
+        }
+    }
+}
+
+#The Soviets refused to conclude a peace treaty!
+country_event = {
+    id = geo.3
+    title = geo.3.t
+    desc = geo.3.d
+	picture = GFX_report_event_SOV_military_offensive
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #Let's go, attack!
+    option = {
+        name = geo.3.a
+		add_war_support = 0.1
+        add_political_power = 25
+        unlock_national_focus = GEO_begin_the_grand_offensive
+        effect_tooltip = {
+            add_timed_idea = {
+                idea = GEO_grand_offensive
+                days = 50
+            }
+            set_country_flag = GEO_ai_grand_offensive
+            every_army_leader = {
+                add_attack = 1
+            }
+            every_owned_state = {
+                limit = {
+                    is_controlled_by = SOV
+                }
+                add_resistance = 10
+                add_compliance = -7.5
+            }
+            if = {
+                limit = {
+                    SOV = {
+                        controls_state = 664
+                    }
+                }
+                664 = {
+                    add_resistance = 12.5
+                    add_compliance = -10
+                }
+            }
+            if = {
+                limit = {
+                    826 = {
+						is_owned_by = ABK
+						is_controlled_by = SOV
+					}
+                }
+                826 = {
+                    add_resistance = 12.5
+                    add_compliance = -10
+                }
+            }
+			if = {
+                limit = {
+                    210 = {
+						is_owned_by = SOS
+						is_controlled_by = SOV
+					}
+                }
+                210 = {
+                    add_resistance = 12.5
+                    add_compliance = -10
+                }
+            }
+        } 
+    }
+    immediate = {
+		hidden_effect = {
+            add_timed_idea = {
+                idea = GEO_grand_offensive
+                days = 50
+            }
+            set_country_flag = GEO_ai_grand_offensive
+            every_army_leader = {
+                add_attack = 1
+            }
+            every_owned_state = {
+                limit = {
+                    is_controlled_by = SOV
+                }
+                add_resistance = 10
+                add_compliance = -7.5
+            }
+            if = {
+                limit = {
+                    SOV = {
+                        controls_state = 664
+                    }
+                }
+                664 = {
+                    add_resistance = 12.5
+                    add_compliance = -10
+                }
+            }
+            if = {
+                limit = {
+                    826 = {
+						is_owned_by = ABK
+						is_controlled_by = SOV
+					}
+                }
+                826 = {
+                    add_resistance = 12.5
+                    add_compliance = -10
+                }
+            }
+			if = {
+                limit = {
+                    210 = {
+						is_owned_by = SOS
+						is_controlled_by = SOV
+					}
+                }
+                210 = {
+                    add_resistance = 12.5
+                    add_compliance = -10
+                }
+            }
+		}
+	}
+}
+
+#Russians surrender!
+country_event = {
+    id = geo.4
+    title = geo.4.t
+    desc = geo.4.d
+	picture = GFX_report_event_generic_sign_treaty2
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #Victory!
+    option = {
+        name = geo.4.a
+		effect_tooltip = {
+            white_peace = SOV
+        }
+        add_political_power = 150
+        add_stability = 0.05
+        add_war_support = -0.15
+        load_focus_tree = GEO
+        complete_national_focus = GEO_our_great_struggle_is_not_over_yet
+        remove_ideas = {
+            GEO_great_liberation_war
+        }
+        add_ideas = {
+            GEO_post_war_devastation
+        }
+    }
+    immediate = {
+        hidden_effect = {
+            clr_global_flag = first_georgian_war
+            remove_ideas = {
+                GEO_great_liberation_war
+            }
+            add_ideas = {
+                GEO_post_war_devastation
+            }
+            573 = {
+                start_resistance = GEO
+            }
+            country_event = {
+                id = geo.5
+                days = 70
+                random_days = 30
+            }
+        }
+    }
+}
+
+#Partisans of the North
+country_event = {
+    id = geo.5
+    title = geo.5.t
+    desc = geo.5.d
+	picture = GFX_report_event_ITA_partisans
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #They, too, are heroes of the nation
+    option = {
+        name = geo.5.a
+        add_political_power = 10
+        add_war_support = 0.03
+        CAU = {
+            country_event = {
+                id = geo.6
+                days = 0
+                hours = 7
+                random_hours = 6
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = hostile_status
+            }
+        }
+        add_opinion_modifier = {
+            target = CAU
+            modifier = hostile_status
+        }
+		163 = {
+            add_resistance_target = {
+                amount = 12
+                days = 365
+            }
+            add_resistance = 10
+            add_compliance = -5
+        }
+        573 = {
+            add_resistance_target = {
+                amount = 7
+                days = 365
+            }
+            add_resistance = 5
+            add_compliance = -2.5
+        }
+    }
+}
+
+#Growth of partisan activity by Georgians (CAU)
+country_event = {
+    id = geo.6
+    title = geo.6.t
+    desc = geo.6.d
+	picture = GFX_report_event_yugoslavia_partisans
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #Damn...
+    option = {
+        name = geo.6.a
+        add_stability = -0.025
+        effect_tooltip = {
+            add_opinion_modifier = {
+                target = PREV
+                modifier = hostile_status
+            }
+            163 = {
+                add_resistance_target = {
+                    amount = 12
+                    days = 365
+                }
+                add_resistance = 10
+                add_compliance = -5
+            }
+            573 = {
+                add_resistance_target = {
+                    amount = 7
+                    days = 365
+                }
+                add_resistance = 5
+                add_compliance = -2.5
+            }
+        }
+    }
+}
+
+#Tbilisi is liberated!
+country_event = {
+    id = geo.7
+    title = geo.7.t
+    desc = geo.7.d
+	picture = GFX_report_event_gre_city_siege
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #Victory is coming!
+    option = {
+        name = geo.7.a
+        add_political_power = 75
+        add_war_support = 0.03
+        every_owned_state = {
+            limit = {
+                is_controlled_by = SOV
+            }
+            add_resistance = 3
+            add_compliance = -2
+        }
+    }
+}
+
+#Tbilisi has fallen! (SOV)
+country_event = {
+    id = geo.8
+    title = geo.8.t
+    desc = geo.8.d
+	picture = GFX_report_event_gre_city_devastated
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #They will surely pay for everything!
+    option = {
+        name = geo.8.a
+        add_political_power = -50
+        add_war_support = -0.015
+        effect_tooltip = {
+            every_controlled_state = {
+                limit = {
+                    is_owned_by = GEO
+                }
+                add_resistance = 3
+                add_compliance = -2
+            }
+        }
+    }
+}
+
+#Georgia is asking for volunteers
+country_event = {
+    id = geo.9
+    title = geo.9.t
+    desc = geo.9.d
+	picture = GFX_report_event_german_volunteers
+    is_triggered_only = yes
+    
+    #We must support the Georgian people in their struggle
+    option = {
+        name = geo.9.a
+        ai_chance = {
+            base = 2
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+            modifier = {
+                factor = 0.8
+                has_manpower < 1000
+            }
+            modifier = {
+                factor = 1.25
+                has_manpower > 3000
+            }
+            modifier = {
+                factor = 1.25
+                has_manpower > 5000
+            }
+        }
+        add_political_power = -10
+        add_stability = 0.001
+        add_manpower = -500
+        army_experience = 5
+        GEO = {
+            country_event = {
+                id = geo.10
+                days = 3
+                random_days = 6
+                random_hours = 3
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_volunteers
+                days = 360
+            }
+        }
+        SOV = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_volunteers_to_georgia
+                days = 720
+            }
+        }
+    }
+    #Our citizens will not die for Georgia
+    option = {
+        name = geo.9.b
+        ai_chance = {
+            base = 1
+            modifier = {
+                factor = 0.5
+                GEO = {
+                    has_manpower < 100
+                }
+            }
+        }
+        add_political_power = 15
+        add_stability = 0.001
+        add_war_support = -0.005
+        GEO = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_refused_to_send_volunteers
+                days = 360
+            }
+        }
+    }
+}
+
+#[FROM.GetAdjectiveCap] Volunteers arrived
+country_event = {
+    id = geo.10
+    title = geo.10.t
+    desc = geo.10.d
+	picture = GFX_report_event_german_volunteers
+    is_triggered_only = yes
+    
+    #Great!
+    option = {
+        name = geo.10.a
+        add_manpower = 500
+        add_political_power = 1
+        effect_tooltip = {
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_sent_volunteers
+                days = 360
+            }
+        }
+    }
+}
+
+#Georgia asks for armaments
+country_event = {
+    id = geo.11
+    title = geo.11.t
+    desc = geo.11.desc
+	picture = GFX_report_event_spr_army_of_africa
+    is_triggered_only = yes
+    
+    #We have enough problems of our own, it's too expensive
+    option = {
+        name = geo.11.a
+        ai_chance = {
+            base = 3
+        }
+        add_political_power = 10
+        add_stability = 0.0015
+        GEO = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_refused_to_send_weapons
+                days = 420
+            }
+        }
+    }
+
+    #We can send the light arms
+    option = {
+        name = geo.11.b
+        ai_chance = {
+            base = 3
+            modifier = {
+                factor = 1.25
+                has_equipment = {
+                    infantry_equipment > 150
+                }
+            }
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+        }
+        add_political_power = 20
+        add_stability = -0.0015
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -150
+        }
+        GEO = {
+            country_event = {
+                id = geo.12
+                days = 3
+                random_days = 8
+                random_hours = 6
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_light_weapons
+                days = 360
+            }
+        }
+        SOV = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_light_weapons_to_georgia
+                days = 720
+            }
+        }
+    }
+
+    #We can send the light arms and artillery pieces
+    option = {
+        name = geo.11.c
+        ai_chance = {
+            base = 2
+            modifier = {
+                factor = 1.25
+                has_equipment = {
+                    infantry_equipment > 150
+                }
+                has_equipment = {
+                    artillery_equipment > 15
+                }
+            }
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+        }
+        add_political_power = 30
+        add_stability = -0.0025
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -150
+        }
+        add_equipment_to_stockpile = {
+            type = artillery_equipment
+            amount = -15
+        }
+        GEO = {
+            country_event = {
+                id = geo.13
+                days = 3
+                random_days = 9
+                random_hours = 10
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_light_weapons_and_artillery_pieces
+                days = 390
+            }
+        }
+        SOV = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_light_weapons_and_artillery_pieces_to_georgia
+                days = 780
+            }
+        }
+    }
+
+    #We can send a complete package of armaments
+    option = {
+        name = geo.11.d
+        ai_chance = {
+            base = 1
+            modifier = {
+                factor = 1.25
+                has_equipment = {
+                    infantry_equipment > 150
+                }
+                has_equipment = {
+                    artillery_equipment > 15
+                }
+                has_equipment = {
+                    support_equipment > 15
+                }
+            }
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+        }
+        add_political_power = 40
+        add_stability = -0.0035
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -150
+        }
+        add_equipment_to_stockpile = {
+            type = artillery_equipment
+            amount = -15
+        }
+        add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = -25
+        }
+        GEO = {
+            country_event = {
+                id = geo.14
+                days = 3
+                random_days = 11
+                random_hours = 16
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_complete_package_of_armaments
+                days = 550
+            }
+        }
+        SOV = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_complete_package_of_armaments_to_georgia
+                days = 840
+            }
+        }
+    }
+}
+
+#[FROM.GetName] sends light arms
+country_event = {
+    id = geo.12
+    title = geo.12.t
+    desc = geo.12.d
+	picture = GFX_report_event_generic_rifles
+    is_triggered_only = yes
+    
+    #Great!
+    option = {
+        name = geo.12.a
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 150
+            producer = FROM
+        }
+        effect_tooltip = {
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_sent_the_light_weapons
+                days = 360
+            }
+        }
+    }
+}
+
+#[FROM.GetName] sends light arms and artillery pieces
+country_event = {
+    id = geo.13
+    title = geo.13.t
+    desc = geo.13.d
+	picture = GFX_report_event_british_artillery
+    is_triggered_only = yes
+    
+    #Excellent!
+    option = {
+        name = geo.13.a
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 150
+            producer = FROM
+        }
+        add_equipment_to_stockpile = {
+            type = artillery_equipment
+            amount = 15
+            producer = FROM
+        }
+        effect_tooltip = {
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_sent_the_light_weapons_and_artillery_pieces
+                days = 390
+            }
+        }
+    }
+}
+
+#[FROM.GetName] sends a complete package of armaments
+country_event = {
+    id = geo.14
+    title = geo.14.t
+    desc = geo.14.d
+	picture = GFX_report_event_soviet_army_greeted
+    is_triggered_only = yes
+    
+    #Wonderful!
+    option = {
+        name = geo.14.a
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 150
+            producer = FROM
+        }
+        add_equipment_to_stockpile = {
+            type = artillery_equipment
+            amount = 15
+            producer = FROM
+        }
+        add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = 25
+            producer = FROM
+        }
+        effect_tooltip = {
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_sent_the_complete_package_of_armaments
+                days = 550
+            }
+        }
+    }
+}
+
+#Diversion in Georgia!
+country_event = {
+    id = geo.15
+    title = geo.15.t
+    desc = geo.15.d
+	picture = GFX_report_event_gre_city_devastated
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #They are willing to do anything! Even to destroy their country!
+    option = {
+        name = geo.15.a
+        every_controlled_state = {
+            limit = {
+                has_state_flag = GEO_diversion_here
+            }
+            clr_state_flag = GEO_diversion_here
+            effect_tooltip = {
+                damage_building = {
+					type = industrial_complex
+					damage = 1
+				}
+            }
+        }
+    }
+}
+
+#Georgia asks to start supplies of weapons (USA)
+country_event = {
+    id = geo.16
+    title = geo.16.t
+    desc = geo.16.d
+	picture = GFX_report_event_polish_army
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #We are ready to start supplying Georgia
+    option = {
+        name = geo.16.a
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0.5
+                has_war = yes
+            }
+            modifier = {
+                factor = 1.2
+                GEO = {
+                    surrender_progress > 0.8
+                }
+            }
+            modifier = {
+                factor = 1.2
+                GEO = {
+                    surrender_progress > 0.95
+                }
+            }
+        }
+        set_global_flag = GEO_USA_agree_to_start_supplies_of_weapons
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -1000
+        }
+        add_equipment_to_stockpile = {
+            type = artillery_equipment
+            amount = -100
+        }
+        add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = -125
+        }
+        add_political_power = 15
+        army_experience = 5
+        GEO = {
+            country_event = {
+                id = geo.17
+                days = 2
+                random_days = 6
+                random_hours = 8
+            }
+            effect_tooltip = {
+                custom_effect_tooltip = EFFECTS_FOR_COUNTRY
+                add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+                    producer = USA
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 100
+                    producer = USA
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 125
+                    producer = USA
+				}
+                if = {
+                    limit = {
+                        NOT = {
+                            has_idea = GEO_NATO_lend_lease_1
+                            has_idea = GEO_NATO_lend_lease_2
+                            has_idea = GEO_NATO_lend_lease_3
+                        }
+                    }
+                    add_ideas = {
+                        GEO_NATO_lend_lease_1
+                    }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = GEO_NATO_lend_lease_1 
+                    }
+                    swap_ideas = {
+                        remove_idea = GEO_NATO_lend_lease_1
+                        add_idea = GEO_NATO_lend_lease_2
+                    }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = GEO_NATO_lend_lease_2 
+                    }
+                    swap_ideas = {
+                        remove_idea = GEO_NATO_lend_lease_2
+                        add_idea = GEO_NATO_lend_lease_3
+                    }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = GEO_NATO_lend_lease_3 
+                    }
+                    add_equipment_to_stockpile = {
+                        type = infantry_equipment
+                        amount = 250
+                    }
+                    add_equipment_to_stockpile = {
+                        type = artillery_equipment
+                        amount = 30
+                    }
+                    add_equipment_to_stockpile = {
+                        type = support_equipment
+                        amount = 35
+                    }
+                }
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_complete_package_of_armaments
+                days = 1080
+            }
+        }
+        SOV = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_complete_package_of_armaments_to_georgia
+                days = 1440
+            }
+        }
+    }
+
+    #Georgia? Maybe you mean the State of Georgia?
+    option = {
+        name = geo.16.b
+        ai_chance = {
+            base = 2
+        }
+        add_political_power = 20
+        GEO = {
+            country_event = {
+                id = geo.18
+                days = 1
+                random_days = 2
+                random_hours = 14
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_refused_to_send_weapons
+                days = 1080
+            }
+        }
+        SOV = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_refused_to_send_weapons_to_georgia
+                days = 1080
+            }
+        }
+    }
+}
+
+#The U.S. agrees
+country_event = {
+    id = geo.17
+    title = geo.17.t
+    desc = geo.17.d
+	picture = GFX_report_event_generic_rifles
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #With such allies we will definitely win
+    option = {
+        name = geo.17.a
+        add_political_power = 50
+        add_war_support = 0.03
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 1000
+            producer = USA
+        }
+        add_equipment_to_stockpile = {
+            type = artillery_equipment
+            amount = 100
+            producer = USA
+        }
+        add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = 125
+            producer = USA
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_idea = GEO_NATO_lend_lease_1
+                    has_idea = GEO_NATO_lend_lease_2
+                    has_idea = GEO_NATO_lend_lease_3
+                }
+            }
+            add_ideas = {
+                GEO_NATO_lend_lease_1
+            }
+        }
+        else_if = {
+            limit = { 
+                has_idea = GEO_NATO_lend_lease_1 
+            }
+            swap_ideas = {
+                remove_idea = GEO_NATO_lend_lease_1
+                add_idea = GEO_NATO_lend_lease_2
+            }
+        }
+        else_if = {
+            limit = { 
+                has_idea = GEO_NATO_lend_lease_2 
+            }
+            swap_ideas = {
+                remove_idea = GEO_NATO_lend_lease_2
+                add_idea = GEO_NATO_lend_lease_3
+            }
+        }
+        else_if = {
+            limit = { 
+                has_idea = GEO_NATO_lend_lease_3 
+            }
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = 250
+            }
+            add_equipment_to_stockpile = {
+                type = artillery_equipment
+                amount = 30
+            }
+            add_equipment_to_stockpile = {
+                type = support_equipment
+                amount = 35
+            }
+        }
+        effect_tooltip = {
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_sent_the_complete_package_of_armaments
+                days = 1080
+            }
+        }
+    }
+}
+
+#The U.S. refused to supply us weapons!
+country_event = {
+    id = geo.18
+    title = geo.18.t
+    desc = geo.18.d
+	picture = GFX_report_event_generic_battle
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+    #Betrayal...
+    option = {
+        name = geo.18.a
+        add_political_power = -50
+        add_stability = -0.05
+        add_war_support = -0.05
+        effect_tooltip = {
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_refused_to_send_weapons
+                days = 1080
+            }
+        }
+    }
+}
+
+#Georgia asks for armaments (NATO)
+country_event = {
+    id = geo.19
+    title = geo.19.t
+    desc = geo.19.d
+	picture = GFX_report_event_generic_rifles
+    is_triggered_only = yes
+    
+    #We have enough problems of our own, the Georgians can handle themselves
+    option = {
+        name = geo.19.a
+        ai_chance = {
+            base = 2
+            modifier = {
+                factor = 0.75
+                has_global_flag = GEO_USA_agree_to_start_supplies_of_weapons
+            }
+        }
+        if = {
+            limit = {
+                has_global_flag = GEO_USA_agree_to_start_supplies_of_weapons
+            }
+            add_political_power = -20
+            USA = {
+                add_opinion_modifier = {
+                    target = ROOT
+                    modifier =  GEO_USA_refused_to_send_weapons_to_georgia
+                    days = 540
+                }
+            }
+        }
+        else = {
+            add_political_power = 10
+        }
+        add_stability = 0.0015
+        GEO = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_refused_to_send_weapons
+                days = 720
+            }
+        }
+    }
+
+    #Let's help Georgia! We owe it to ourselves to fight the communist threat
+    option = {
+        name = geo.19.b
+        ai_chance = {
+            base = 3
+            modifier = {
+                factor = 1.25
+                has_equipment = {
+                    infantry_equipment > 350
+                }
+                has_equipment = {
+                    artillery_equipment > 35
+                }
+                has_equipment = {
+                    support_equipment > 40
+                }
+            }
+            modifier = {
+                factor = 0.25
+                has_war = yes
+            }
+        }
+        add_political_power = 40
+        add_stability = -0.0035
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -350
+        }
+        add_equipment_to_stockpile = {
+            type = artillery_equipment
+            amount = -35
+        }
+        add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = -40
+        }
+        GEO = {
+            country_event = {
+                id = geo.20
+                days = 3
+                random_days = 6
+                random_hours = 14
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_complete_package_of_armaments
+                days = 610
+            }
+        }
+        SOV = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_sent_the_complete_package_of_armaments_to_georgia
+                days = 720
+            }
+        }
+    }
+}
+
+#[FROM.GetName] sends weapons to us
+country_event = {
+    id = geo.20
+    title = geo.20.t
+    desc = geo.20.d
+	picture = GFX_report_event_generic_rifles
+    is_triggered_only = yes
+    
+    #Great!
+    option = {
+        name = geo.20.a
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 350
+            producer = FROM
+        }
+        add_equipment_to_stockpile = {
+            type = artillery_equipment
+            amount = 35
+            producer = FROM
+        }
+        add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = 40
+            producer = FROM
+        }
+        if = {
+            limit = {
+                has_variable = GEO_ask_NATO_for_weapons_agree_countries
+            }
+            add_to_variable = {
+                var = GEO_ask_NATO_for_weapons_agree_countries
+                value = 1
+            }
+            if = {
+                limit = {
+                    check_variable = {
+                        var = GEO_ask_NATO_for_weapons_agree_countries
+                        value = 4
+                    }
+                }
+                clear_variable = GEO_ask_NATO_for_weapons_agree_countries
+                if = {
+                    limit = {
+                        NOT = {
+                            has_idea = GEO_NATO_lend_lease_1
+                            has_idea = GEO_NATO_lend_lease_2
+                            has_idea = GEO_NATO_lend_lease_3
+                        }
+                    }
+                    add_ideas = {
+                        GEO_NATO_lend_lease_1
+                    }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = GEO_NATO_lend_lease_1 
+                    }
+                    swap_ideas = {
+                        remove_idea = GEO_NATO_lend_lease_1
+                        add_idea = GEO_NATO_lend_lease_2
+                    }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = GEO_NATO_lend_lease_2 
+                    }
+                    swap_ideas = {
+                        remove_idea = GEO_NATO_lend_lease_2
+                        add_idea = GEO_NATO_lend_lease_3
+                    }
+                }
+                else_if = {
+                    limit = { 
+                        has_idea = GEO_NATO_lend_lease_3 
+                    }
+                    add_equipment_to_stockpile = {
+                        type = infantry_equipment
+                        amount = 250
+                    }
+                    add_equipment_to_stockpile = {
+                        type = artillery_equipment
+                        amount = 30
+                    }
+                    add_equipment_to_stockpile = {
+                        type = support_equipment
+                        amount = 35
+                    }
+                }
+            }
+        }
+        effect_tooltip = {
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_sent_the_complete_package_of_armaments
+                days = 610
+            }
+        }
+    }
+}
+
+#Georgia asks for a diversionary strike (CHE)
+country_event = {
+    id = geo.21
+    title = geo.21.t
+    desc = geo.21.d
+	picture = GFX_report_event_ast_planning
+    is_triggered_only = yes
+    
+    #To weaken the USSR even more? Great idea!
+    option = {
+        name = geo.21.a
+        ai_chance = {
+            base = 5
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+        }
+        add_political_power = 40
+        add_war_support = 0.04
+        GEO = {
+            country_event = {
+                id = geo.22
+                days = 0
+                random_days = 1
+                hours = 6
+                random_hours = 15
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_helped_in_the_war_of_independence
+                days = 1080
+            }
+        }
+        SOV = {
+            country_event = {
+                id = geo.24
+                days = 1
+                random_days = 1
+                hours = 4
+                random_hours = 6
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_terrorist_attack_in_south_ossetia
+                days = 720
+            }
+        }
+        start_border_war = {
+            change_state_after_war = no
+            attacker = {
+                state = 828
+                num_provinces = 3
+                on_win = geo.25
+                on_lose = geo.25
+                on_cancel = geo.25
+            }	
+            defender = {
+                state = 401
+                num_provinces = 3
+                on_win = geo.26
+                on_lose = geo.26
+                on_cancel = geo.26
+            }
+        }
+        hidden_effect = {
+            set_border_war_data = {
+                attacker = 828
+                defender = 401
+                attacker_modifier = -0.8
+                defender_modifier = -0.9
+                combat_width = 40
+            }
+            activate_mission = CHE_end_of_the_combat_reconnaissance_in_401
+        }
+    }
+
+    #We are not ready for this kind of attack, it's too risky
+    option = {
+        name = geo.21.b
+        ai_chance = {
+            base = 2
+        }
+        add_political_power = -35
+        add_war_support = -0.05
+        GEO = {
+            country_event = {
+                id = geo.23
+                days = 1
+                random_days = 2
+                random_hours = 14
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = GEO_refused_to_help_in_the_war_of_independence
+                days = 1140
+            }
+        }
+    }
+}
+
+#Ichkeria is responding to the call for help!
+country_event = {
+    id = geo.22
+    title = geo.22.t
+    desc = geo.22.d
+	picture = GFX_report_event_generic_battle
+    is_triggered_only = yes
+    
+    #Thank you Chechens!
+    option = {
+        name = geo.22.a
+        add_war_support = -0.01
+        add_stability = -0.015
+        effect_tooltip = {
+            add_political_power = -50
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_helped_in_the_war_of_independence
+                days = 1080
+            }
+            start_border_war = {
+                change_state_after_war = no
+                attacker = {
+                    state = 828
+                    num_provinces = 3
+                    on_win = geo.25
+                    on_lose = geo.25
+                    on_cancel = geo.25
+                }	
+                defender = {
+                    state = 401
+                    num_provinces = 3
+                    on_win = geo.26
+                    on_lose = geo.26
+                    on_cancel = geo.26
+                }
+            }
+        }
+    }
+    immediate = {
+        hidden_effect = {
+            add_political_power = -50
+        }
+    }
+}
+
+#Ichkeria refused
+country_event = {
+    id = geo.23
+    title = geo.23.t
+    desc = geo.23.d
+	picture = GFX_report_event_finnish_letter
+    is_triggered_only = yes
+    
+    #Disappointing...
+    option = {
+        name = geo.23.a
+        add_political_power = -15
+        add_war_support = 0.01
+        add_stability = -0.01
+        effect_tooltip = {
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_refused_to_help_in_the_war_of_independence
+                days = 1140
+            }
+        }
+    }
+}
+
+#Chechen insurgents attack North Ossetia! (SOV)
+country_event = {
+    id = geo.24
+    title = geo.24.t
+    desc = geo.24.d
+	picture = GFX_report_event_generic_battle
+    is_triggered_only = yes
+    
+    #The Georgians are clearly involved in this
+    option = {
+        name = geo.24.a
+        effect_tooltip = {
+            add_political_power = -20
+            add_stability = -0.02
+            start_border_war = {
+                change_state_after_war = no
+                attacker = {
+                    state = 828
+                    num_provinces = 3
+                    on_win = geo.25
+                    on_lose = geo.25
+                    on_cancel = geo.25
+                }	
+                defender = {
+                    state = 401
+                    num_provinces = 3
+                    on_win = geo.26
+                    on_lose = geo.26
+                    on_cancel = geo.26
+                }
+            }
+            add_opinion_modifier = {
+                target = FROM
+                modifier = GEO_terrorist_attack_in_south_ossetia
+                days = 720
+            }
+        }
+    }
+}   
+
+#The end of the distraction (CHE)
+country_event = {
+    id = geo.25
+    title = geo.25.t
+    desc = geo.25.d
+	picture = GFX_report_event_chinese_soldiers_city_ruin
+    is_triggered_only = yes
+    
+    #We hope this will help Georgia win
+    option = {
+        name = geo.25.a
+        add_political_power = 10
+        army_experience = 10
+        add_war_support = 0.01
+        add_tech_bonus = {
+            name = CHE_GEO_distraction_experience
+            bonus = 0.35
+            category = land_doctrine
+            uses = 1
+        }
+    }
+}
+
+#Chechen insurgents retreated (SOV)
+country_event = {
+    id = geo.26
+    title = geo.26.t
+    desc = geo.26.d
+	picture = GFX_report_event_generic_ruins
+    is_triggered_only = yes
+    
+    #We hope it won't happen again
+    option = {
+        name = geo.26.a
+        add_political_power = 10
+        army_experience = 5
+        add_stability = 0.01
+        add_war_support = -0.01
+    }
+}

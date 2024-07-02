@@ -1,0 +1,115 @@
+characters = {
+	CZE_ladislav_adamec = {
+		name = CZE_ladislav_adamec
+		portraits={
+			civilian={
+				large = "GFX_CZE_ladislav_adamec"
+			}
+		}
+		country_leader={
+			ideology = reformist_socialism
+			traits = {
+				CZE_ladislav_adamec_desc
+			}
+		}
+	}
+	CZE_milos_jakes = {
+		name = CZE_milos_jakes
+		portraits={
+			civilian={
+				large = "GFX_CZE_milos_jakes"
+			}
+		}
+		country_leader={
+			ideology = left_communist
+		}
+	}
+	CZE_klays_vacvav = {
+		name = CZE_klays_vacvav
+		portraits={
+			civilian={
+				large = "GFX_CZE_klays_vacvav"
+			}
+		}
+		country_leader={
+			ideology = national_democracy
+		}
+	}
+	CZE_josef_lux = {
+		name = CZE_josef_lux
+		portraits={
+			civilian={
+				large = "GFX_CZE_josef_lux"
+			}
+		}
+		country_leader={
+			ideology = christian_democracy
+		}
+	}
+	CZE_irshi_dinsbir = {
+		name = CZE_irshi_dinsbir
+		portraits={
+			civilian={
+				large = "GFX_CZE_irshi_dinsbir"
+			}
+		}
+		country_leader={
+			ideology = social_liberalism
+		}
+	}
+	CZE_milosh_zeman = {
+		name = CZE_milosh_zeman
+		portraits={
+			civilian={
+				large = "GFX_CZE_milosh_zeman"
+			}
+		}
+		country_leader={
+			ideology = democratic_socialism
+		}
+	}
+	CZE_monarchy_sovet = {
+		name = CZE_monarchy_sovet
+		portraits={
+			civilian={
+				large = "GFX_CZE_monarchy_sovet"
+			}
+		}
+		country_leader={
+			ideology = monarchism
+		}
+	}
+	CZE_fascist_sovet = {
+		name = CZE_fascist_sovet
+		portraits={
+			civilian={
+				large = "GFX_CZE_fascist_sovet"
+			}
+		}
+		country_leader={
+			ideology = neonazism
+		}
+	}
+	CZE_petr_hanning = {
+		name = CZE_petr_hanning
+		portraits={
+			civilian={
+				large = "GFX_CZE_petr_hanning"
+			}
+		}
+		country_leader={
+			ideology = nationalism_ideology
+		}
+	}
+	CZE_KPC = {
+		name = CZE_KPC
+		portraits={
+			civilian={
+				large = "GFX_CZE_KPC"
+			}
+		}
+		country_leader={
+			ideology = populist_socialism
+		}
+	}
+}

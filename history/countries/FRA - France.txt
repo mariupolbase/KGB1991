@@ -1,0 +1,25 @@
+﻿capital = 16
+set_convoys = 300
+
+
+set_politics = {
+	ruling_party = social_democracy
+	last_election = "1989.5.15"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	liberalism = 21
+	conservatism = 11
+	authoritarianism = 4
+	social_democracy = 51
+	nationalism = 5
+	despotism = 2
+	communist = 6
+}
+
+add_ideas = {
+	nuclear_power
+}
+
+recruit_character = FRA_fransua_mitteran

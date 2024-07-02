@@ -1,0 +1,19 @@
+﻿l_english:
+ #Decisions
+ spawn_army_debug:0 "Spawn Army"
+ spawn_army_debug_desc:0 "You know, I don't want to poop"
+ spawn_army_of_hobos_debug:0 "Spawn an army of hobos"
+ spawn_army_of_hobos_debug_desc:0 "§TBi§!§Br§!§Rds§! §Cfly§!\n§RBomb§! the §Bpig§!§8lets§!\n§TTh§!§Be§!§Ry§! §Rblow up§! §Bthe§!§8ir§! §Yhouses§!"
+ spawn_mobile_army_debug:0 "Spawn a mobile army".
+ spawn_mobile_army_debug_desc:0 "Speedrun to conquer §BUkra§!§Yine§!, let's go!"
+ modifier_repair_speed_bunker_factor:0 "Скорость восстановления §Yбункеров§!"
+ rail_way_plural:0 "Railways"
+ gorge:0 "Gorge"
+ gorge_desc:0 " "
+ terrorist:0 "Terrorist"
+
+ #Ideas
+ nuclear_power:0 "Nuclear power"
+ #Tooltips
+ its_not_good: "§RIt's not good...§!"
+ VIP: "§YWork in progress§!"

@@ -1,0 +1,39 @@
+
+SOV_build_intel_network_in_USA_strat = {
+	allowed = {
+		tag = SOV
+	}
+	
+	enable = {
+		tag = SOV
+	}
+	
+	abort_when_not_enabled = yes
+		
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 50
+		mission_target = USA
+	}
+}
+
+SOV_build_intel_network_in_ENG_strat = {
+	allowed = {
+		tag = SOV
+	}
+	
+	enable = {
+		tag = SOV
+	}
+	
+	abort_when_not_enabled = yes
+		
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		value = 50
+		mission_target = ENG
+	}
+}
+

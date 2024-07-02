@@ -1,0 +1,19 @@
+﻿capital = 10
+
+recruit_character = POL_lex_valensa
+
+set_politics = {
+	ruling_party = conservatism
+	last_election = "1935.9.8"
+	election_frequency = 36
+	elections_allowed = no
+}
+set_popularities = {
+	conservatism = 32
+	nationalism = 11
+	communist = 19
+	despotism = 28
+	social_democracy = 4
+	socialist = 6
+}
+

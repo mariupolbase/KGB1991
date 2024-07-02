@@ -1,0 +1,37 @@
+﻿capital = 6
+
+recruit_character = BEL_dexane_shan
+
+#oob = "BEL_1936"
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		#set_air_oob = "BEL_1936_air_bba"
+	else = {
+		#set_air_oob = "BEL_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+		}
+	}
+}
+
+set_research_slots = 3
+set_stability = 0.8
+set_war_support = 0.3 #we see what you are doing there Adolf
+
+set_politics = {
+	ruling_party = conservatism
+	last_election = "1932.11.27"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	conservatism = 53
+	liberalism = 35
+	social_democracy = 10
+	socialist = 2
+}
+
+
+set_convoys = 80
+set_stability = 0.75

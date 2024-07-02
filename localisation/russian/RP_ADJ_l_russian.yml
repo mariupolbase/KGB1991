@@ -1,0 +1,30 @@
+﻿l_russian:
+#Ideas
+#Units
+#Country
+ ADJ: "Аджария"
+ ADJ_DEF: "Республика Аджария"
+ ADJ_GEO_autonomy: "Аджарская АР"
+ ADJ_GEO_autonomy_DEF: "Аджарская Автономная Республика"
+ ADJ_ADJ: "Аджарск."
+#Characters
+ ADJ_mikhail_makharadze: "Михаил Махарадзе"
+#Parties
+ ADJ_ultranationalism_party: "§yОтсутствует§!"
+ ADJ_ultranationalism_party_long: " "
+ ADJ_nationalism_party: "§yОтсутствует§!"
+ ADJ_nationalism_party_long: " "
+ ADJ_despotism_party: "§yОтсутствует§!"
+ ADJ_despotism_party_long: " "
+ ADJ_authoritarianism_party: "НДПА"
+ ADJ_authoritarianism_party_long: "Национал-Демократическая партия Аджарии"
+ ADJ_conservatism_party: "§yОтсутствует§!"
+ ADJ_conservatism_party_long: " "
+ ADJ_liberalism_party: "§yОтсутствует§!"
+ ADJ_liberalism_party_long: " "
+ ADJ_social_democracy_party: "СДВГ"
+ ADJ_social_democracy_party_long: "Союз демократического возрождения Грузии"
+ ADJ_socialist_party: "§yОтсутствует§!"
+ ADJ_socialist_party_long: " "
+ ADJ_communist_party: "КПА"
+ ADJ_communist_party_long: "Коммунистическая партия Аджарии"

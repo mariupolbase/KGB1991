@@ -1,0 +1,135 @@
+﻿capital = 821 #Grozny
+
+oob = "CHE_units"
+
+recruit_character = CHE_dzhokhar_dudayev
+recruit_character = CHE_aslan_maskhadov
+recruit_character = CHE_zelimkhan_yandarbiev
+recruit_character = CHE_daud_ahmadov
+recruit_character = CHE_abdul_khalim_sadulaev
+
+set_research_slots = 3
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_military_police = 1
+	tech_maintenance_company = 1
+	motorised_infantry = 1
+	mechanised_infantry = 1
+	main_battle_tank_chassis = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	gwtank_chassis = 1
+	basic_train = 1
+	motorized_rocket_unit = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_technology = {
+		early_fighter = 1
+		fighter1 = 1
+		early_bomber = 1
+		strategic_bomber1 = 1
+		naval_bomber1 = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+}
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		mtg_transport = 1
+		basic_battery = 1
+		basic_torpedo = 1
+	}
+}
+create_equipment_variant = {
+	name = "Т-80"
+	type = modern_tank_chassis_1
+	parent_version = 0
+	modules = {
+		main_armament_slot = tank_medium_cannon_2
+		turret_type_slot = tank_modern_tank_turret
+		suspension_type_slot = tank_torsion_bar_suspension
+		armor_type_slot = tank_cast_armor
+		engine_type_slot = tank_gas_turbine_engine
+	}
+	upgrades = {
+		tank_nsb_engine_upgrade = 0
+		tank_nsb_armor_upgrade = 0
+	}
+	icon = "GFX_SOV_main_battle_tank_medium"
+}
+
+set_stability = 0.17
+set_war_support = 0.68
+
+add_ideas = {
+	extensive_conscription
+	limited_exports
+	low_economic_mobilisation
+}
+
+set_politics = {
+	ruling_party = nationalism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	ultranationalism = 20
+	nationalism = 46
+	despotism = 13
+	conservatism = 12
+	liberalism = 3
+	conservatism = 1
+	communist = 5
+}

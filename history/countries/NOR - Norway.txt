@@ -1,0 +1,38 @@
+﻿capital = 110
+
+recruit_character = NOR_Haarlem_Bruntland
+
+set_research_slots = 3
+
+add_ideas = {
+	limited_conscription
+}
+
+set_stability = 0.9
+set_war_support = 0.1
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+	basic_train = 1
+}
+
+set_convoys = 200		# biggest merchant marine in the world
+set_stability = 0.7
+
+set_politics = {
+	ruling_party = social_democracy
+	last_election = "1933.10.16"
+	election_frequency = 36
+	elections_allowed = yes
+}
+set_popularities = {
+	social_democracy = 96
+	nationalism = 2
+	communist = 2
+}
+

@@ -1,0 +1,1064 @@
+political_actions = {
+
+	anti_ultranationalism_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = ultranationalism }
+		}
+
+		available = {
+            ultranationalism > 0.1
+        }
+	
+		modifier = {
+			ultranationalism_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+    anti_nationalism_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = nationalism }
+		}
+
+		available = {
+            nationalism > 0.1
+        }
+	
+		modifier = {
+			nationalism_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+    anti_despotism_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = despotism }
+		}
+
+		available = {
+            despotism  > 0.1
+        }
+	
+		modifier = {
+			despotism_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+	anti_authoritarianism_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = authoritarianism }
+		}
+
+		available = {
+            authoritarianism  > 0.1
+        }
+	
+		modifier = {
+			authoritarianism_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+	anti_conservatism_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = conservatism }
+		}
+
+		available = {
+            conservatism > 0.1
+        }
+	
+		modifier = {
+			conservatism_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+    anti_liberalism_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = liberalism }
+		}
+
+		available = {
+            liberalism > 0.1
+        }
+	
+		modifier = {
+			liberalism_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+	anti_social_democracy_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = social_democracy }
+		}
+
+		available = {
+            social_democracy > 0.1
+        }
+	
+		modifier = {
+			social_democracy_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+	anti_socialist_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = socialist }
+		}
+
+		available = {
+            socialist > 0.1
+        }
+	
+		modifier = {
+			socialist_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+    anti_communist_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = communist }
+		}
+
+		available = {
+            communist > 0.1
+        }
+	
+		modifier = {
+			communist_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+    
+	ban_ultranationalism_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			ultranationalism < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = ultranationalism }
+			ultranationalism > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = ultranationalism
+			}
+		}
+	
+		modifier = {
+			ultranationalism_drift = -0.05
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@ultranationalism
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = ultranationalism
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_ultranationalism_flag
+			}
+			custom_effect_tooltip = ban_ultranationalism_party_tt
+			add_stability = ban_ideology_var
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ban_nationalism_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			nationalism < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = nationalism }
+			nationalism > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = nationalism
+			}
+		}
+	
+		modifier = {
+			nationalism_drift = -0.05
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@nationalism
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = nationalism
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_nationalism_flag
+			}
+			custom_effect_tooltip = ban_nationalism_party_tt
+			add_stability = ban_ideology_var
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ban_despotism_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			despotism < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = despotism }
+			despotism > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = despotism
+			}
+		}
+	
+		modifier = {
+			despotism_drift = -0.05
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@despotism
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_despotism_flag
+			}
+			custom_effect_tooltip = ban_despotism_party_tt
+			add_stability = ban_ideology_var
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ban_authoritarianism_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			authoritarianism < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = authoritarianism }
+			authoritarianism > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = authoritarianism
+			}
+		}
+	
+		modifier = {
+			authoritarianism_drift = -0.05
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@authoritarianism
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = authoritarianism
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_authoritarianism_flag
+			}
+			custom_effect_tooltip = ban_authoritarianism_party_tt
+			add_stability = ban_ideology_var
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ban_conservatism_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			conservatism < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = conservatism }
+			conservatism > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = conservatism
+			}
+		}
+	
+		modifier = {
+			conservatism_drift = -0.05
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@conservatism
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_conservatism_flag				
+			}
+			custom_effect_tooltip = ban_conservatism_party_tt
+			add_stability = ban_ideology_var
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ban_liberalism_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			liberalism < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = liberalism }
+			liberalism > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = liberalism
+			}
+		}
+	
+		modifier = {
+			liberalism_drift = -0.05
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@liberalism
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = liberalism
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_liberalism_flag				
+			}
+			custom_effect_tooltip = ban_liberalism_party_tt
+			add_stability = ban_ideology_var
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ban_social_democracy_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			social_democracy < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = social_democracy }
+			social_democracy > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = social_democracy
+			}
+		}
+	
+		modifier = {
+			social_democracy_drift = -0.05
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@social_democracy
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = social_democracy
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_social_democracy_flag				
+			}
+			custom_effect_tooltip = ban_social_democracy_party_tt
+			add_stability = ban_ideology_var
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ban_socialist_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			socialist < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = socialist }
+			socialist > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = socialist
+			}
+		}
+	
+		modifier = {
+			socialist_drift = -0.05
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@socialist
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = socialist
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_socialist_flag
+			}
+			custom_effect_tooltip = ban_socialist_party_tt
+			add_stability = ban_ideology_var
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	ban_communist_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			communist < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = communist }
+			communist > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = communist
+			}
+		}
+	
+		modifier = {
+			communist_drift = -0.05
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@communist
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = communist
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}
+				set_country_flag = banned_communist_flag
+			}
+			custom_effect_tooltip = ban_communist_party_tt
+			add_stability = ban_ideology_var
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	institute_press_censorship_ultranationalism_state = {
+
+		icon = generic_political_discourse
+
+		available = {
+		}
+
+		visible = {
+			has_government = ultranationalism
+		}
+	
+		modifier = {
+			ultranationalism_drift = 0.03
+			nationalism_drift = 0.01
+			despotism_drift = -0.01
+			authoritarianism_drift = -0.01
+			conservatism_drift = -0.01
+			liberalism_drift = -0.01
+			social_democracy_drift = -0.01
+			socialist_drift = -0.01
+			communist_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	institute_press_censorship_nationalism_state = {
+
+		icon = generic_political_discourse
+
+		available = {
+		}
+
+		visible = {
+			has_government = nationalism
+		}
+	
+		modifier = {
+			ultranationalism_drift = 0.01
+			nationalism_drift = 0.03
+			despotism_drift = 0.01
+			authoritarianism_drift = -0.01
+			conservatism_drift = -0.01
+			liberalism_drift = -0.01
+			social_democracy_drift = -0.01
+			socialist_drift = -0.01
+			communist_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	institute_press_censorship_despotism_state = {
+
+		icon = generic_political_discourse
+
+		available = {
+		}
+
+		visible = {
+			has_government = despotism
+		}
+	
+		modifier = {
+			ultranationalism_drift = -0.01
+			nationalism_drift = 0.01
+			despotism_drift = 0.03
+			authoritarianism_drift = 0.01
+			conservatism_drift = -0.01
+			liberalism_drift = -0.01
+			social_democracy_drift = -0.01
+			socialist_drift = -0.01
+			communist_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	institute_press_censorship_authoritarianism_state = {
+
+		icon = generic_political_discourse
+
+		available = {
+		}
+
+		visible = {
+			has_government = authoritarianism
+		}
+	
+		modifier = {
+			ultranationalism_drift = -0.01
+			nationalism_drift = -0.01
+			despotism_drift = 0.01
+			authoritarianism_drift = 0.03
+			conservatism_drift = 0.01
+			liberalism_drift = -0.01
+			social_democracy_drift = -0.01
+			socialist_drift = -0.01
+			communist_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	institute_press_censorship_conservatism_state = {
+
+		icon = generic_political_discourse
+
+		available = {
+		}
+
+		visible = {
+			has_government = conservatism
+		}
+	
+		modifier = {
+			ultranationalism_drift = -0.01
+			nationalism_drift = -0.01
+			despotism_drift = -0.01
+			authoritarianism_drift = 0.01
+			conservatism_drift = 0.03
+			liberalism_drift = 0.01
+			social_democracy_drift = -0.01
+			socialist_drift = -0.01
+			communist_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	institute_press_censorship_liberalism_state = {
+
+		icon = generic_political_discourse
+
+		available = {
+		}
+
+		visible = {
+			has_government = liberalism
+		}
+	
+		modifier = {
+			ultranationalism_drift = -0.01
+			nationalism_drift = -0.01
+			despotism_drift = -0.01
+			authoritarianism_drift = -0.01
+			conservatism_drift = 0.01
+			liberalism_drift = 0.03
+			social_democracy_drift = 0.01
+			socialist_drift = -0.01
+			communist_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	institute_press_censorship_social_democracy_state = {
+
+		icon = generic_political_discourse
+
+		available = {
+		}
+
+		visible = {
+			has_government = social_democracy
+		}
+	
+		modifier = {
+			ultranationalism_drift = -0.01
+			nationalism_drift = -0.01
+			despotism_drift = -0.01
+			authoritarianism_drift = -0.01
+			conservatism_drift = -0.01
+			liberalism_drift = 0.01
+			social_democracy_drift = 0.03
+			socialist_drift = 0.01
+			communist_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	institute_press_censorship_socialist_state = {
+
+		icon = generic_political_discourse
+
+		available = {
+		}
+
+		visible = {
+			has_government = socialist
+		}
+	
+		modifier = {
+			ultranationalism_drift = -0.01
+			nationalism_drift = -0.01
+			despotism_drift = -0.01
+			authoritarianism_drift = -0.01
+			conservatism_drift = -0.01
+			liberalism_drift = -0.01
+			social_democracy_drift = 0.01
+			socialist_drift = 0.03
+			communist_drift = 0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	institute_press_censorship_communist_state = {
+
+		icon = generic_political_discourse
+
+		available = {
+		}
+
+		visible = {
+			has_government = communist
+		}
+	
+		modifier = {
+			ultranationalism_drift = -0.01
+			nationalism_drift = -0.01
+			despotism_drift = -0.01
+			authoritarianism_drift = -0.01
+			conservatism_drift = -0.01
+			liberalism_drift = -0.01
+			social_democracy_drift = -0.01
+			socialist_drift = 0.01
+			communist_drift = 0.03
+		}
+	
+		days_remove = 360
+		cost = 150
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

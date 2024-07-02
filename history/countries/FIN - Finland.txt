@@ -1,0 +1,46 @@
+﻿capital = 111
+
+recruit_character = FIN_Mauno_Koivisto
+
+set_research_slots = 3
+
+add_ideas = {
+	limited_conscription
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1			
+	interwar_antiair = 1
+	tech_support = 1		
+	tech_recon = 1
+	tech_engineers = 1
+	basic_train = 1
+}
+
+
+set_convoys = 5
+
+add_ideas = {
+	limited_conscription
+}
+
+set_politics = {
+	ruling_party = social_democracy
+	last_election = "1933.7.1"
+	election_frequency = 36
+	elections_allowed = yes
+}
+set_popularities = {
+	liberalism = 10
+	nationalism = 10
+	communist = 1
+	social_democracy = 59
+	conservatism = 11
+	authoritarianism = 5
+	despotism = 4
+}
+
+add_ideas = {
+}

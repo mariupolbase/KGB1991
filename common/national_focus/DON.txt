@@ -1,0 +1,212 @@
+focus_tree = {
+	id = DON_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = DON
+		}
+	}
+
+	continuous_focus_position = {
+		x = 2
+		y = 6
+	}
+	initial_show_position = { focus = DON_fate_of_last_cosack_unit }
+	focus = {
+        id = DON_fate_of_last_cosack_unit
+        icon = GFX_goal_unknown
+        x = 13
+        y = 0
+        cost = 1  
+		completion_reward = {
+			custom_effect_tooltip = DON_fate_of_last_cosack_unit_tt
+			hidden_effect = {
+				country_event = {
+					id = don.1
+					days = 0
+					hours = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+        id = DON_end_of_last_cosack_unit
+        icon = GFX_goal_unknown
+		mutually_exclusive = {
+			focus = DON_save_last_cosack_unit
+		}
+		prerequisite = {
+			focus = DON_fate_of_last_cosack_unit
+		}
+        x = 10
+        y = 1
+        cost = 0
+		available = {
+			always = no
+		}
+		completion_reward = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+        id = DON_save_last_cosack_unit
+        icon = GFX_goal_unknown
+		mutually_exclusive = {
+			focus = DON_end_of_last_cosack_unit
+		}
+		prerequisite = {
+			focus = DON_fate_of_last_cosack_unit
+		}
+        x = 16
+        y = 1
+        cost = 0
+		available = {
+			always = no
+		}
+		completion_reward = {
+			hidden_effect = {
+				set_country_flag = {
+					flag = DON_august_kruse_accept
+					value = 0
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+        id = DON_call_UPSD_volunteers
+        icon = GFX_goal_unknown
+		prerequisite = {
+			focus = DON_save_last_cosack_unit
+		}
+        x = 16
+        y = 2
+        cost = 10
+		completion_reward = {
+			country_event = {
+				id = don.3
+				days = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+        id = DON_fate_of_USSR_puppet
+        icon = GFX_goal_unknown
+		prerequisite = {
+			focus = DON_save_last_cosack_unit
+		}
+        x = 14
+        y = 2
+        cost = 2
+		completion_reward = {
+			country_event = {
+				id = don.4
+				days = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+        id = DON_end_the_strelkov_clique
+        icon = GFX_goal_unknown
+		prerequisite = {
+			focus = DON_save_last_cosack_unit
+		}
+        x = 18
+        y = 2
+        cost = 2
+		completion_reward = {
+			country_event = {
+				id = don.5
+				days = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+        id = DON_fate_of_german_from_volga
+        icon = GFX_goal_unknown
+		prerequisite = {
+			focus = DON_end_the_strelkov_clique
+			focus = DON_fate_of_USSR_puppet
+		}
+        x = 16
+        y = 3
+        cost = 2
+		completion_reward = {
+			country_event = {
+				id = don.6
+				days = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+        id = DON_repair_rostov
+        icon = GFX_goal_unknown
+		prerequisite = {
+			focus = DON_end_of_last_cosack_unit
+		}
+        x = 10
+        y = 2
+        cost = 3
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DON_ruins_1
+				add_idea = DON_ruins_2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+        id = DON_promote_kislyakov
+        icon = GFX_goal_unknown
+		prerequisite = {
+			focus = DON_end_of_last_cosack_unit
+		}
+        x = 8
+        y = 2
+        cost = 3
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			DON_vladislav_kislyakov = {
+				add_advisor_role = {
+					advisor = {
+						slot = army_chief
+						idea_token = vladislav_kislyakov
+						ledger = army
+						traits = { army_chief_offensive_3 }
+					}
+				}
+				
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

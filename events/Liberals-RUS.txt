@@ -1,0 +1,243 @@
+add_namespace = rus
+add_namespace = rus_hidden
+country_event = {
+    id = rus.1
+    title = rus.1.t
+    desc = rus.1.d
+	fire_only_once = yes
+	picture = GFX_report_event_SOV_leningrad_concert
+    trigger = {
+		tag = SOV
+		has_civil_war_in_russia = yes
+	}
+    option = {
+        name = rus.1.a
+		ARH = {
+			set_state_owner = 214
+			set_province_controller = 3338
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+			create_faction = LIBERALS_NOVAYA_ROSSIYA
+			load_oob = ARH_units
+		}
+    }
+	option = {
+		trigger = {
+			is_ai = no
+		}
+        name = rus.1.b
+		ARH = {
+			set_state_owner = 214
+			set_province_controller = 3338
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+			create_faction = LIBERALS_NOVAYA_ROSSIYA
+			load_oob = ARH_units
+		}
+		ARH = {
+			change_tag_from = SOV
+		}
+    }
+	immediate = {
+		hidden_effect = {
+			ARH = {
+				add_ideas = RCW_russian_civil_war
+				country_event = {
+					id = rus.2
+					days = 15
+				}
+			}
+			SOV = {
+				country_event = {
+					id = rus.3
+					days = 40
+				}
+			}
+			SOV = {
+				country_event = {
+					id = rus.4
+					days = 80
+				}
+			}
+		}
+	}
+}
+country_event = {
+    id = rus.2
+    title = rus.2.t
+    desc = rus.2.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_SOV_leningrad_concert
+    option = {
+        name = rus.2.a
+		KRR = {
+			set_state_owner = 234
+			set_province_controller = 3734
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+			load_oob = KRR_units
+		}
+		ARH = {
+			add_to_faction = KRR
+		}
+		if = {
+			limit = { 
+				has_dlc = "Together for Victory" 
+			}
+			ARH = {
+				set_autonomy = {
+					target = KRR
+					autonomy_state = autonomy_collaboration_government
+				}
+			}
+
+		}
+			else = {
+				ARH = {
+				puppet = KRR
+				}
+			}
+    }
+	option = {
+		trigger = {
+			is_ai = no
+		}
+        name = rus.2.b
+		KRR = {
+			set_state_owner = 234
+			set_province_controller = 3734
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+			load_oob = KRR_units
+		}
+		ARH = {
+			add_to_faction = KRR
+		}
+		if = {
+			limit = { 
+				has_dlc = "Together for Victory" 
+			}
+			ARH = {
+				set_autonomy = {
+					target = KRR
+					autonomy_state =  autonomy_collaboration_government
+				}
+			}
+
+		}
+			else = {
+				ARH = {
+				puppet = KRR
+				}
+			}
+		KRR = {
+			change_tag_from = ARH
+		}
+    }
+	immediate = {
+		hidden_effect = {
+			KRR = {
+				add_ideas = RCW_russian_civil_war
+			}
+		}
+	}
+}
+country_event = {
+    id = rus.3
+    title = rus.3.t
+    desc = rus.3.d
+	fire_only_once = yes
+	picture = GFX_report_event_SOV_leningrad_concert
+	is_triggered_only = yes
+    option = {
+        name = rus.3.a
+		SAL = {
+			set_state_owner = 579
+			set_province_controller = 1684
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+			load_oob = SAL_units
+		}
+    }
+	option = {
+		trigger = {
+			is_ai = no
+		}
+        name = rus.3.b
+		SAL = {
+			set_state_owner = 579
+			set_province_controller = 1684
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+			load_oob = SAL_units
+		}
+		SAL = {
+			change_tag_from = ARH
+		}
+    }
+	immediate = {
+		hidden_effect = {
+			SAL = {
+				add_ideas = RCW_russian_civil_war
+			}
+		}
+	}
+}
+country_event = {
+    id = rus.4
+    title = rus.4.t
+    desc = rus.4.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_SOV_leningrad_concert
+    option = {
+        name = rus.4.a
+		VLA = {
+			set_state_owner = 408
+			set_province_controller = 957
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+			load_oob = VLA_units
+		}
+    }
+	option = {
+		trigger = {
+			is_ai = no
+		}
+        name = rus.4.b
+		VLA = {
+			set_state_owner = 408
+			set_province_controller = 957
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+			load_oob = VLA_units
+		}
+		VLA = {
+			change_tag_from = SOV
+		}
+    }
+	immediate = {
+		hidden_effect = {
+			VLA = {
+				add_ideas = RCW_russian_civil_war
+			}
+		}
+	}
+}

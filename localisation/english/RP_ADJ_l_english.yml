@@ -1,0 +1,30 @@
+﻿l_english:
+#Ideas
+#Units
+#Country
+ ADJ: "Adjara"
+ ADJ_DEF: "Republic of Adjara"
+ ADJ_GEO_autonomy: "Adjara AR"
+ ADJ_GEO_autonomy_DEF: "Adjara Autonomous Republic"
+ ADJ_ADJ: "Adjarian"
+#Characters
+ ADJ_mikhail_makharadze: "Mikhail Makharadze"
+#Parties
+ ADJ_ultranationalism_party: "§RDESTROYED§!"
+ ADJ_ultranationalism_party_long: " "
+ ADJ_nationalism_party: "§RDESTROYED§!"
+ ADJ_nationalism_party_long: " "
+ ADJ_despotism_party: "§RDESTROYED§!"
+ ADJ_despotism_party_long: " "
+ ADJ_authoritarianism_party: "NDPA"
+ ADJ_authoritarianism_party_long: "National Democratic Party of Adjara"
+ ADJ_conservatism_party: "§RDESTROYED§!"
+ ADJ_conservatism_party_long: " "
+ ADJ_liberalism_party: "§RDESTROYED§!"
+ ADJ_liberalism_party_long: " "
+ ADJ_social_democracy_party: "§RDESTROYED§!"
+ ADJ_social_democracy_party_long: " "
+ ADJ_socialist_party: "§RDESTROYED§!"
+ ADJ_socialist_party_long: " "
+ ADJ_communist_party: "§RDESTROYED§!"
+ ADJ_communist_party_long: " "

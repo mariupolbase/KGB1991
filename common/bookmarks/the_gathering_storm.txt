@@ -1,0 +1,140 @@
+bookmarks = {
+	bookmark = {
+		name = "RED_PHOENIX_NAME"
+		desc = "RED_PHOENIX_DESC"
+		date = 1993.1.1.1
+		picture = "GFX_RED_PHOENIX_IMAGE"
+		default_country = "SOV"
+		default = yes
+		"SOV"={
+			history = "SOV_GATHERING_STORM_DESC"
+			ideology = despotism
+			ideas = {
+				SOV_still_here
+				SOV_ideological_hopelessness
+				SOV_divided_party
+			}
+			focuses = {
+			}	
+		}
+		"CHI"={
+			history = "CHI_GATHERING_STORM_DESC"
+			ideology = despotism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"USA"={
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = liberalism
+			ideas = {
+				home_of_the_free
+			}
+			focuses = {
+			}
+		}
+		"ENG"={
+			history = "ENG_GATHERING_STORM_DESC"
+			ideology = conservatism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"FRA"={
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = social_democracy
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"GER"={
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = conservatism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"JAP"={
+			history = "JAP_GATHERING_STORM_DESC"
+			ideology = liberalism
+			ideas = {
+			}	
+			focuses = {
+			}			
+		}
+		"RAJ"={
+			history = "RAJ_GATHERING_STORM_DESC"
+			ideology = conservatism
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+		"OSR"={
+			minor = yes
+			history = "OSR_RED_PHOENIX_DESC"
+			ideology = authoritarianism
+			ideas = {
+				OSR_regular_attacks
+				OSR_defence
+			}
+			focuses = {
+			}
+		}
+		"DON"={
+			minor = yes
+			history = "DON_GATHERING_STORM_DESC"
+			ideology = despotism
+			ideas = {
+				DON_last_cosack_unit
+				DON_ruins_1
+				DON_ruined_land
+			}
+			focuses = {
+			}
+		}
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+		"YUG"={
+			minor = yes
+			history = "YUG_GATHERING_STORM_DESC"
+			ideology = despotism
+			ideas = {
+				yugoslavia_preservation
+				yugoslavia_spirit_innovation
+			}
+			focuses = {
+			}
+		}
+		"CZE"={
+			minor = yes
+			history = "CZE_GATHERING_STORM_DESC"
+			ideology = socialist
+			ideas = {
+				consequences_velvet_revolution
+			}
+			focuses = {
+			}
+		}
+		"GEO"={
+			minor = yes
+			history = "GEO_GATHERING_STORM_DESC"
+			ideology = despotism
+			ideas = {
+				GEO_great_liberation_war
+				GEO_mountain_guerrilla_tactics
+			}
+			focuses = {
+				GEO_our_great_struggle
+				GEO_for_shavernidze
+				GEO_everyone_will_work_or_fight
+			}
+		}
+	}
+}

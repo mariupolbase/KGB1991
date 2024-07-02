@@ -1,0 +1,76 @@
+capital = 909
+set_research_slots = 1
+set_stability = 0.5
+set_war_support = 0.4
+add_political_power = 0
+set_oob = OSR_unit
+set_convoys = 20
+add_manpower = 70000
+recruit_character = OSR_igor_kasatonov
+activate_advisor = OSR_igor_kasatonov
+recruit_character = OSR_mahmut_gareev
+activate_advisor = OSR_mahmut_gareev
+activate_advisor = OSR_mahmut_gareev_2
+create_intelligence_agency = {
+	name = "КГБ"
+	icon = GFX_agency_logo_kgb
+}
+add_ideas = {
+war_economy
+closed_economy
+OSR_regular_attacks
+service_by_requirement
+OSR_defence
+}
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_military_police = 1
+	motorised_infantry = 1
+	mechanised_infantry = 1
+	main_battle_tank_chassis = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	gwtank_chassis = 1
+	marines = 1
+	fleet_in_being = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	basic_train = 1
+	motorized_rocket_unit = 1
+}
+set_popularities = {
+	authoritarianism = 50
+	despotism = 5
+	communist = 15
+	socialist = 5
+	social_democracy = 10
+	conservatism = 10
+	liberalism = 5
+}
+set_politics = {
+	ruling_party = authoritarianism
+	last_election = "1991.11.8"
+	election_frequency = 48
+	elections_allowed = No
+}
+create_equipment_variant = {
+	name = "Т-80"
+	type = modern_tank_chassis_1
+	parent_version = 0
+	modules = {
+		main_armament_slot = tank_medium_cannon_2
+		turret_type_slot = tank_modern_tank_turret
+		suspension_type_slot = tank_torsion_bar_suspension
+		armor_type_slot = tank_cast_armor
+		engine_type_slot = tank_gas_turbine_engine
+	}
+	upgrades = {
+		tank_nsb_engine_upgrade = 0
+		tank_nsb_armor_upgrade = 0
+	}
+	icon = "GFX_SOV_main_battle_tank_medium"
+}
